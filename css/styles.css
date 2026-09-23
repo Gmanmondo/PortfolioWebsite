@@ -1,0 +1,185 @@
+/* =========================================================
+   styles.css
+   One stylesheet for the whole site.
+   Each page's <body> has a class (page-home, page-projects,
+   page-about, page-services, page-contact) so page-specific
+   rules only apply where they belong.
+   ========================================================= */
+
+
+/* ---------- Top bar (all pages) ---------- */
+
+/* Target the inserted top bar inside the placeholder */
+#top-bar-placeholder .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(215, 215, 215);
+  padding: 1%;
+  text-align: center;
+  z-index: 10000;
+  user-select: none;
+}
+
+#top-bar-placeholder .top-bar a {
+  position: relative;
+  margin: 20px;
+  text-decoration: none;
+  color: rgb(130, 130, 130);
+  font-weight: bold;
+}
+
+#top-bar-placeholder .top-bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(130, 130, 130);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+}
+
+#top-bar-placeholder .top-bar a:hover::after {
+  width: 100%;
+}
+
+#top-bar-placeholder .top-bar a.active {
+  color: black;
+}
+
+#top-bar-placeholder .top-bar a.active::after {
+  width: 100%;
+  background-color: black;
+}
+
+
+/* ---------- Home page ---------- */
+
+body.page-home {
+  margin: 0;
+}
+
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw; /* space between videos and heading */
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  width: 40%; /* responsive width */
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
+#background-video-left {
+  transform: scaleX(1);
+}
+
+#background-video-right {
+  transform: scaleX(-1);
+}
+
+.center-heading {
+  font-size: clamp(1rem, 4vw, 4rem); /* scales with screen size */
+  color: black;
+  z-index: 10;
+  text-align: center;
+}
+
+
+/* ---------- Projects page ---------- */
+
+body.page-projects {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Cursor trailer */
+body.page-projects:hover > #trailer {
+  opacity: 1;
+}
+
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  display: grid;
+  place-items: center;
+}
+
+#trailer-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  line-height: 0;
+  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 0;
+  color: black;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+  opacity: 1;
+}
+
+#trailer-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Image track (drag to scroll) */
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  user-select: none;
+}
+
+#image-track > .interactable {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.interactable {
+  transition: opacity 400ms ease;
+  opacity: 0.6;
+}
+
+.interactable:hover {
+  opacity: 1;
+}
+
+
+/* ---------- About page ---------- */
+/* (no styles yet) */
+
+
+/* ---------- Services page ---------- */
+/* (no styles yet) */
+
+
+/* ---------- Contact page ---------- */
+/* (no styles yet) */

@@ -1,0 +1,6 @@
+# Netlify settings
+# The site is plain HTML, CSS and JS, so there is no build step.
+# "publish" tells Netlify to serve the files from the main folder.
+
+[build]
+  publish = "."

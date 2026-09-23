@@ -4,48 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
-    <link rel="stylesheet" href="/projects.css" />
-    <link rel="stylesheet" href="/topbar.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
 
-  <body>
+  <body class="page-projects">
     <div id="top-bar-placeholder"></div>
     <div id="trailer">
       <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
     </div>
-    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0" data-percentage="0">
       <img
         class="interactable"
-        src="/Media/Scruffle.png"
+        src="/Images/Scruffle.png"
+        alt="Scruffle"
         draggable="false"
         data-type="link"
       />
       <img
         class="interactable"
-        src="/Media/Gubbo.png"
+        src="/Images/Gubbo.png"
+        alt="Gubbo"
         draggable="false"
         data-type="link"
       />
       <img
         class="interactable"
-        src="/Media/Arbiter's Descent.png"
+        src="/Images/Arbiter's%20Descent.png"
+        alt="Arbiter's Descent"
         draggable="false"
         data-type="link"
       />
       <img
         class="interactable"
-        src="/Media/Captive Thoughts.png"
+        src="/Images/Captive%20Thoughts.png"
+        alt="Captive Thoughts"
         draggable="false"
         data-type="link"
       />
     </div>
 
-    <script type="module" src="/loadTopBar.js"></script>
-    <script type="module" src="/imageTrack.js"></script>
-    <script type="module" src="/trailer.js"></script>
+    <script type="module" src="/js/loadTopBar.js"></script>
+    <script type="module" src="/js/imageTrack.js"></script>
+    <script type="module" src="/js/trailer.js"></script>
   </body>
 </html>
