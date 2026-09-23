@@ -1,0 +1,45 @@
+/* Target the inserted top bar inside the placeholder */
+#top-bar-placeholder .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(215, 215, 215);
+  padding: 1%;
+  text-align: center;
+  z-index: 1000;
+  user-select: none;
+  z-index: 10000;
+}
+
+#top-bar-placeholder .top-bar a {
+  position: relative;
+  margin: 20px;
+  text-decoration: none;
+  color: rgb(130, 130, 130);
+  font-weight: bold;
+}
+
+#top-bar-placeholder .top-bar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(130, 130, 130);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+}
+
+#top-bar-placeholder .top-bar a:hover::after {
+  width: 100%;
+}
+
+#top-bar-placeholder .top-bar a.active {
+  color: black;
+}
+
+#top-bar-placeholder .top-bar a.active::after {
+  width: 100%;
+  background-color: black;
+}

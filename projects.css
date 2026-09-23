@@ -1,0 +1,79 @@
+body {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;  
+  overflow: hidden;
+}
+
+body:hover > #trailer {
+  opacity: 1;
+}
+
+/* trailer container already exists; ensure icon area is sized and visible */
+#trailer {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  display: grid;
+  place-items: center;
+}
+
+#trailer-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  line-height: 0;
+  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 0;
+  color: black;
+}
+
+#trailer:not([data-type=""]) > #trailer-icon {
+  opacity: 1;
+}
+
+#trailer-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+
+/* -- Image Paralax -- */
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -50%); 
+  user-select: none;
+}
+
+#image-track > .interactable {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+.interactable {
+  transition: opacity 400ms ease;
+  opacity: 0.6;
+}
+
+.interactable:hover {
+  opacity: 1;
+}
+
